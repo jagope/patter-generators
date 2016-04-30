@@ -1,0 +1,28 @@
+apply plugin: 'java'		// add support for Java
+
+// repository where to find the dependencies of the project
+repositories {
+    mavenCentral()
+}
+
+// dependencies for the project
+dependencies {
+    // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.18'
+
+    // test dependencies
+    testCompile 'junit:junit:4.12'
+}
+
+// properties for java plugin
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'pattern-generators'
+    version =  '0.0.1'
+    manifest {
+        attributes 'Implementation-Title': 'Pattern generators',
+                   'Implementation-Version': version
+    }
+}
