@@ -7,11 +7,17 @@ repositories {
 
 // dependencies for the project
 dependencies {
+	// will generate automatically the file META-INF/services/javax.annotation.processing.Processor
+	compile 'com.google.auto.service:auto-service:1.0-rc2'
+
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.18'
+    compile 'com.google.guava:guava:18.0'
 
     // test dependencies
     testCompile 'junit:junit:4.12'
+    testCompile 'com.google.testing.compile:compile-testing:0.9'
+    testCompile 'com.google.truth:truth:0.28'
 }
 
 // properties for java plugin
